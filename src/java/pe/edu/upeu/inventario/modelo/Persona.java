@@ -12,6 +12,8 @@ package pe.edu.upeu.inventario.modelo;
  */
 public class Persona {
     public int idPersona;
+    public int idEscuela;
+    public int idROL;
     public String nombre;
     public String paterno;
     public String materno;
@@ -22,8 +24,10 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(int idPersona, String nombre, String paterno, String materno, String sexo, int dni, int telefono) {
+    public Persona(int idPersona, int idEscuela, int idROL, String nombre, String paterno, String materno, String sexo, int dni, int telefono) {
         this.idPersona = idPersona;
+        this.idEscuela = idEscuela;
+        this.idROL = idROL;
         this.nombre = nombre;
         this.paterno = paterno;
         this.materno = materno;
@@ -38,6 +42,22 @@ public class Persona {
 
     public void setIdPersona(int idPersona) {
         this.idPersona = idPersona;
+    }
+
+    public int getIdEscuela() {
+        return idEscuela;
+    }
+
+    public void setIdEscuela(int idEscuela) {
+        this.idEscuela = idEscuela;
+    }
+
+    public int getIdROL() {
+        return idROL;
+    }
+
+    public void setIdROL(int idROL) {
+        this.idROL = idROL;
     }
 
     public String getNombre() {
@@ -87,9 +107,7 @@ public class Persona {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
-    
-    
-    
+
     
     
 }

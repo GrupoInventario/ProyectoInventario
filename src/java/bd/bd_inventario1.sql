@@ -1,12 +1,11 @@
 CREATE TABLE Area (
   idArea INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idPersona INTEGER UNSIGNED NOT NULL,
   area VARCHAR(45) NULL,
   ubicacion VARCHAR(45) NULL,
   telefono NUMERIC(8) NULL,
   estado NUMERIC(1) NULL,
   idEscuela INTEGER UNSIGNED NOT NULL,
-  PRIMARY KEY(idArea, idPersona)
+  PRIMARY KEY(idArea)
 );
 
 CREATE TABLE Categoria (
@@ -27,8 +26,6 @@ CREATE TABLE Componente (
 
 CREATE TABLE Detalle_Inventario (
   idDetalleInventario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idUsuario INTEGER UNSIGNED NOT NULL,
-  idPersona INTEGER UNSIGNED NOT NULL,
   nombre VARCHAR(20) NULL,
   modelo VARCHAR(20) NULL,
   serie VARCHAR(20) NULL,
@@ -39,40 +36,41 @@ CREATE TABLE Detalle_Inventario (
   fecha DATETIME NULL,
   idInventario INTEGER UNSIGNED NOT NULL,
   idSubComponente INTEGER UNSIGNED NOT NULL,
-  PRIMARY KEY(idDetalleInventario, idUsuario, idPersona)
+  PRIMARY KEY(idDetalleInventario)
 );
 
 CREATE TABLE Escuela (
   idEscuela INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idPersona INTEGER UNSIGNED NOT NULL,
   escuela VARCHAR(20) NULL,
   ubicacion VARCHAR(20) NULL,
   idFacultad INTEGER UNSIGNED NOT NULL,
-  PRIMARY KEY(idEscuela, idPersona)
+  PRIMARY KEY(idEscuela)
 );
 
 CREATE TABLE Facultad (
   idFacultad INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idPersona INTEGER UNSIGNED NOT NULL,
   facultad VARCHAR(45) NULL,
   ubicion VARCHAR(20) NULL,
   telefono INTEGER UNSIGNED NULL,
-  PRIMARY KEY(idFacultad, idPersona)
+  PRIMARY KEY(idFacultad)
 );
 
 CREATE TABLE Inventario (
   idInventario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idPersona INTEGER UNSIGNED NOT NULL,
+  idEscuela INTEGER UNSIGNED NOT NULL,
   descripcion VARCHAR(45) NULL,
   cantidad INTEGER UNSIGNED NULL,
   estado NUMERIC(1) NULL,
   fecha_registro DATETIME NULL,
   ubicacion VARCHAR(20) NULL,
-  PRIMARY KEY(idInventario, idPersona)
+  idUsuario INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(idInventario)
 );
 
 CREATE TABLE Persona (
   idPersona INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  idEscuela INTEGER UNSIGNED NOT NULL,
+  idROL INTEGER UNSIGNED NOT NULL,
   nombre VARCHAR(45) NULL,
   paterno VARCHAR(45) NULL,
   materno VARCHAR(45) NULL,
@@ -82,14 +80,22 @@ CREATE TABLE Persona (
   PRIMARY KEY(idPersona)
 );
 
+CREATE TABLE ROL (
+  idROL INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  rol VARCHAR(45) NULL,
+  descripcion VARCHAR(45) NOT NULL,
+  PRIMARY KEY(idROL)
+);
+
 CREATE TABLE Sub_Area (
   idSubArea INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idPersona INTEGER UNSIGNED NOT NULL,
+  idArea INTEGER UNSIGNED NOT NULL,
   subArea VARCHAR(45) NULL,
   ubicacion VARCHAR(45) NULL,
   telefono NUMERIC(8) NULL,
   estado NUMERIC(1) NULL,
-  PRIMARY KEY(idSubArea, idPersona)
+  idPersona INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(idSubArea)
 );
 
 CREATE TABLE Sub_Componente (
@@ -102,10 +108,10 @@ CREATE TABLE Sub_Componente (
 
 CREATE TABLE Usuario (
   idUsuario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  idPersona INTEGER UNSIGNED NOT NULL,
   usuario VARCHAR(20) NULL,
   clave VARCHAR(20) NULL,
-  PRIMARY KEY(idUsuario, idPersona)
+  idPersona INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(idUsuario)
 );
 
 
