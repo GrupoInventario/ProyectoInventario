@@ -12,7 +12,7 @@
             <a href="pvir?op=1" class="btn btn-mini btn-warning" role="button">Persona</a>
             <a href="index" class="btn btn-mini btn-warning" role="button">Inventario</a>
             <a href="index" class="btn btn-mini btn-warning" role="button">Detalle-Inventario</a>
-            <a href="index" class="btn btn-mini btn-warning" role="button">Inicio</a>
+            <a href="rol?op=1" class="btn btn-mini btn-warning" role="button">Rol</a>
         </div>
     </div>
     <div class="content">
