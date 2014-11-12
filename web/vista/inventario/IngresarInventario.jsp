@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="pe.edu.upeu.inventario.modelo.Usuario" %>
+<%@page import="pe.edu.upeu.inventario.modelo.Inventario" %>
 <jsp:useBean id="list1" scope="session" class="java.util.ArrayList"/>
 <!DOCTYPE html>
 <html>
@@ -25,14 +25,14 @@
     <body>
         <%@include file="../../WEB-INF/jspf/top.jspf" %>
         <div id="caja">
-            <strong>REGISTRAR USUARIO</strong>
+            <strong>REGISTRAR INVENTARIO</strong>
             <hr>
             
             <form role="form" method="get" action="usuar">
                 
           
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Usuario:</label>
+                    <label for="exampleInputEmail1">Inventario:</label>
                     <input type="text" class="form-control" name="usuario" placeholder="Ingresar usuario" autofocus="">
                 </div>
                 <div class="form-group">

@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="pe.edu.upeu.inventario.modelo.Usuario" %>
+<%@page import="pe.edu.upeu.inventario.modelo.Escuela" %>
 <jsp:useBean id="list1" scope="session" class="java.util.ArrayList"/>
 <!DOCTYPE html>
 <html>
@@ -32,7 +32,7 @@
                 
           
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Usuario:</label>
+                    <label for="exampleInputEmail1">Escuela:</label>
                     <input type="text" class="form-control" name="usuario" placeholder="Ingresar usuario" autofocus="">
                 </div>
                 <div class="form-group">
