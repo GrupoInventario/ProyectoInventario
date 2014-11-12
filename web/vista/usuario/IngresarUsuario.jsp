@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="pe.edu.upeu.inventario.modelo.Usuario" %>
-
 <jsp:useBean id="list1" scope="session" class="java.util.ArrayList"/>
 <!DOCTYPE html>
 <html>
