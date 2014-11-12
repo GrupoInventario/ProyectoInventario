@@ -116,7 +116,7 @@ public class UsuarioDAO implements InterfaceUsuario {
 
     @Override
     public boolean delete(int id) {
-           this.conn = FactoryConnectionDB.open(FactoryConnectionDB.MYSQL);
+        this.conn = FactoryConnectionDB.open(FactoryConnectionDB.MYSQL);
         boolean delete = false;
         try {
             StringBuilder sql = new StringBuilder();
